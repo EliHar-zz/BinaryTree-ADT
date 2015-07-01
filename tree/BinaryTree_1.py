@@ -15,18 +15,18 @@ class BinaryTree(object):
     def isEmpty(self):
         return self.size == 0
 
-    def insert(self, aValue):
+    def insert(self, data):
 
         if self.isEmpty():
             self.rootIndex = 1
             if (self.arrayList.get(self.rootIndex)) is None:
-                self.arrayList.replace(self.rootIndex, aValue)
+                self.arrayList.replace(self.rootIndex, data)
                 self.lastIndex = self.rootIndex
         elif (self.arrayList.get(self.rootIndex * 2)) is None:
-            self.arrayList.replace(self.rootIndex * 2, aValue)
+            self.arrayList.replace(self.rootIndex * 2, data)
             self.lastIndex = self.rootIndex*2
         elif (self.arrayList.get(self.rootIndex * 2 + 1)) is None:
-            self.arrayList.replace(self.rootIndex * 2 + 1, aValue)
+            self.arrayList.replace(self.rootIndex * 2 + 1, data)
             self.lastIndex = self.rootIndex*2+1
             self.rootIndex += 1
 
